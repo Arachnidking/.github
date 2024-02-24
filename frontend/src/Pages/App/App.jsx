@@ -7,11 +7,15 @@ import LoginPage from '../Login Page/LoginPage'
 import Dashboard from '../Dashboard/Dashboard'
 import NotFound from '../404Page/NotFound'
 import { AuthContextProvider } from '../../Services/authProvider'
+import Navbar from "../Navbar/Navbar";
 
 export default function App () {
   return (
-    <AuthContextProvider>
-      <div className={AppStyles['app-page']}>
+        <AuthContextProvider>
+            <React.Fragment>
+                <Navbar />
+            </React.Fragment>
+            <div className={AppStyles['app-page']}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<LandingPage />} />
